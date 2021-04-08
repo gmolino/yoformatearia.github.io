@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
+    integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+
+  <!-- Spoqa Han Sans -->
+  <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+
+  <!-- OG Tag -->
+  
+  <meta name="title" content="Grape Theme-Communications" />
+  <meta name="author" content="Nayeong Kim" />
+  <meta name="keywords" content="Linux,Terminal" />
+  <meta name="description" content="Apuntes de comnicaciones" />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="Grape Theme-Communications" />
+  <meta property="og:description" content="Apuntes de comnicaciones" />
+  <meta property="og:type" content="website, blog" />
+  <meta property="og:image"
+    content="http://0.0.0.0:4000/assets/img/smile.png" />
+  <meta property="og:site_name" content="Grape Theme" />
+  <meta property="og:url" content="http://0.0.0.0:4000/2019/06/09/comunications.html" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Grape Theme-Communications" />
+  <meta name="twitter:description" content="Apuntes de comnicaciones" />
+  <meta name="twitter:image"
+    content="http://0.0.0.0:4000/assets/img/smile.png" />
+
+  <title>Grape Theme-Communications</title>
+</head>
+<body>
+  <div class="container">
+    
+
+<header>
+  <nav>
+    <ul>
+      
+      <!-- others -->
+      <a href="http://0.0.0.0:4000">
+        <li class="current btn-nav">Blog</li>
+      </a>
+      <a href="http://0.0.0.0:4000/tags">
+        <li class="btn-nav">Tags</li>
+      </a>
+      <a href="http://0.0.0.0:4000/portfolio">
+        <li class="btn-nav">Portfolio</li>
+      </a>
+      
+    </ul>
+  </nav>
+</header>
+<div id="post">
+  <section class="post-header">
+    <h1 class="title">Communications</h1>
+    <p class="subtitle">Apuntes de comnicaciones</p>
+    <p class="meta">
+      June 9, 2019
+    </p>
+  </section>
+  <section class="post-content">
+    <h2 id="nmap">nmap</h2>
+
+<p>Escanea hasta el puerto <port> y solo muestra abiertos
+`$nmap -p-<port> --open`</port></port></p>
+
+<ul>
+  <li>-T &lt;1-5&gt; : …</li>
+</ul>
+
+<h2 id="vim">VIM</h2>
+
+<p><code class="language-plaintext highlighter-rouge">:colorscheme :set nu</code><br />
+<code class="language-plaintext highlighter-rouge">:syntax on</code><br />
+<code class="language-plaintext highlighter-rouge">:set cursorline</code><br />
+<code class="language-plaintext highlighter-rouge">:set hlsearch</code><br />
+<code class="language-plaintext highlighter-rouge">:sp / :usp --&gt; divide pantalla</code></p>
+
+<h2 id="ping">ping</h2>
+
+<ul>
+  <li>--c 1</li>
+  <li>--R</li>
+</ul>
+
+<h2 id="kitty">Kitty</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Shift+Ctrl&gt; + n --&gt; nueva ventana</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Shift+Ctrl&gt; + Enter --&gt; nueva división</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Shift+Ctrl&gt; + q --&gt; cierra tab</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Shift+Ctrl&gt; + t --&gt; nuevo tab</code></li>
+  <li><code class="language-plaintext highlighter-rouge">&lt;Shift+Ctrl&gt; + F2 --&gt; config kitty</code></li>
+</ul>
+
+<p>— ranger
+— $kitty -kitten icat <imagen></imagen></p>
+
+<h2 id="exponer-puerto-python">Exponer puerto python</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="c">#Python2</span>
+	<span class="nv">$python</span> <span class="nt">-m</span> SimpleHTTPServer 8000
+	<span class="c">#Python3</span>
+	<span class="nv">$python</span> <span class="nt">-m</span> http. server 8000
+</code></pre></div></div>
+
+<h2 id="docker">DOCKER</h2>
+
+<p>Inicia contenedor y en segudo plano:<br />
+<code class="language-plaintext highlighter-rouge">$docker-compose up -d</code></p>
+
+<p>Mostrar Logs ininterrumpido:<br />
+<code class="language-plaintext highlighter-rouge">$docker logs --tail &lt;files&gt; -f &lt;container&gt; </code></p>
+
+<p>Directorio de contenedores…
+/var/lib/docker/container</p>
+
+<h2 id="jekyll-docker">jekyll docker</h2>
+
+<p>descargar theme jekyll</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 jekyll/jekyll:4.0 jekyll serve
+</code></pre></div></div>
+
+<h4 id="flags">flags:</h4>
+
+<ul>
+  <li><em>--rm:</em> elimina el contenedor al salir.</li>
+</ul>
+
+<h2 id="ssh">SSH</h2>
+
+<h3 id="túnel-inverso---port-forwarding">Túnel inverso - port forwarding</h3>
+
+  </section>
+</div>
+
+<div id="top" class="top-btn" onclick="moveTop()">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<!-- Disqus -->
+
+
+<!-- Footer -->
+<footer>
+  <div class="footer">
+    Copyright © 2019
+    <a href="https://github.com/NAYE0NG">Nayeong Kim</a>.
+    Powered by Jekyll with
+    <a href="https://github.com/naye0ng/Grape-Theme">Grape Theme</a>.
+  </div>
+</footer>
+
+
+<script>
+  var lastScrollTop = 0;
+  window.onscroll = function () {
+    var st = document.body.scrollTop || document.documentElement.scrollTop;
+    if (st > 250) {
+      document.getElementById("top").style.display = "block"
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.opacity = 0
+      } else {
+        document.getElementById("top").style.opacity = 1
+      }
+    } else {
+      document.getElementById("top").style.opacity = 0
+      if (st > lastScrollTop) {
+        document.getElementById("top").style.display = "none"
+      }
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }
+  function moveTop() {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
+</script>
+  </div>
+</body>
+
+</html>
